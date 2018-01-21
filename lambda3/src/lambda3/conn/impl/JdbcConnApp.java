@@ -11,5 +11,7 @@ public class JdbcConnApp {
 	public IConnectionConnector connection;
 	public void init() {
 		connection.connect("");
+
+		System.out.println(connection.getClass().getName());
 	}
 }

@@ -1,4 +1,4 @@
-package lambda3.conn;
+package lambda3.conn.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,6 +10,6 @@ import com.google.inject.BindingAnnotation;
 @BindingAnnotation
 @Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Hive {
+public @interface Jdbc {
 	
 }

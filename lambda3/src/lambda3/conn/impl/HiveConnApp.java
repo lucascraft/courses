@@ -13,5 +13,7 @@ public class HiveConnApp {
 	
 	public void init() {
 		connection.connect("");
+		
+		System.out.println(connection.getClass().getName());
 	}
 }
