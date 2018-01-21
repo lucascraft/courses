@@ -33,11 +33,8 @@ public class ConnectionPool implements IConnectionPool
 	    	Class<?> connectionApp = appMapper.getConnectionApByName(c.getType());
 			connectionsMap.put(c, (AbstractConApp) injector.getInstance(connectionApp));
 			AbstractConApp conn = connectionsMap.get(c);
-			if (conn instanceof AbstractConApp)
-			{
-				((AbstractConApp)conn).init();
-				((AbstractConApp)conn).getConnector().setURL(c.getUrl());
-			}
+			conn.init();
+			conn.getConnector().setURL(c.getUrl());
 		});
 	}
 
