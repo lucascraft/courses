@@ -1,10 +1,13 @@
+
 package lambda3.garage;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.json.JSONObject;
@@ -20,7 +23,13 @@ public class GarageJsonParser {
 		try {
 			String jsonText = new String(Files.readAllBytes(Paths.get(path)));
 			JSONObject json = new JSONObject(jsonText);
-			return json.getJSONArray("vehicles").toList().stream().map(o -> new Vehicle(((HashMap<String, String>)o).get("brand"), ((HashMap<String, String>)o).get("kind"), ((HashMap<String, String>)o).get("mk"))).collect(Collectors.toSet());
+			Function<Object, Map<String, String>> o2hMap = o2m -> new HashMap<String, String>((Map<String, String>)o2m);
+			return json.getJSONArray("vehicles").toList().stream().map(o2hMap).map( o  -> new Vehicle(
+					o.get("brand"), 
+					o.get("kind"), 
+					o.get("mk"), 
+					o.get("wheels")
+			)).collect(Collectors.toSet());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

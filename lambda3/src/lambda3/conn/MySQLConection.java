@@ -1,8 +1,6 @@
 package lambda3.conn;
 
-import lambda3.cfg.IConectionManager;
-
-public class MySQLConection implements IConectionManager {
+public class MySQLConection implements IConnectionConector {
 
 	@Override
 	public boolean connect() {

@@ -1,7 +1,11 @@
+
 package lambda3.vehicles;
 
 public enum Brand {
 	Toyota,
 	Ford,
-	Fiat
+	Fiat,
+	Honda,
+	Yamaha,
+	Piaggio
 }

@@ -10,6 +10,6 @@ import com.google.inject.BindingAnnotation;
 @BindingAnnotation
 @Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Hive {
+public @interface SAP {
 	
 }

@@ -1,3 +1,4 @@
+
 package lambda3.vehicles;
 
 public class Vehicle 
@@ -49,15 +50,16 @@ public class Vehicle
 		this.mk = mk;
 	}
 	
-	public Vehicle(String _brand, String kind, String mk)
+	public Vehicle(String _brand, String kind, String mk, Object wheel)
 	{
 		this.brand = Brand.valueOf(_brand);
 		this.kind = kind;
 		this.mk = mk;
+		this.nbWheels = ((Integer)wheel).intValue();
 	}
 	
 	@Override
 	public String toString() {
-		return "[" + brand.name() + "][" + kind + "][" + mk + "]";
+		return "[" + brand.name() + "][" + kind + "][" + mk + "][" + nbWheels + " wheels]";
 	}
 }

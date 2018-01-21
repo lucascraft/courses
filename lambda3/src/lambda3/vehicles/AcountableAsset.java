@@ -2,6 +2,7 @@ package lambda3.vehicles;
 
 import java.util.UUID;
 
+
 public class AcountableAsset {
 	private String id;
 	private float price;
