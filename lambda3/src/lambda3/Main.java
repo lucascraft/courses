@@ -3,7 +3,6 @@ package lambda3;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import lambda3.cfg.ICfgManager;
 import lambda3.conn.impl.HiveConnApp;
 import lambda3.conn.impl.JdbcConnApp;
 import lambda3.conn.impl.SAPConnApp;
@@ -14,17 +13,14 @@ public class Main
 	public static void main(String[] args) 
 	{
 		Injector injector = Guice.createInjector(new ConfigurationModule());
-	    ICfgManager config = injector.getInstance(ICfgManager.class);
 
-	    new Garage().init(config.loadCfg("in/vehicles.json"));
+		Garage garage = injector.getInstance(Garage.class);
 	    
-	    SAPConnApp sap = new SAPConnApp();
-	    JdbcConnApp jdbc = new JdbcConnApp();
-	    HiveConnApp hive = new HiveConnApp();
+	    garage.init("in/vehicles.json");
 	    
-	    injector.injectMembers(sap);
-	    injector.injectMembers(jdbc);
-	    injector.injectMembers(hive);
+	    SAPConnApp sap = injector.getInstance(SAPConnApp.class);
+	    JdbcConnApp jdbc = injector.getInstance(JdbcConnApp.class);
+	    HiveConnApp hive = injector.getInstance(HiveConnApp.class);
 	    
 	    sap.init();
 	    jdbc.init();

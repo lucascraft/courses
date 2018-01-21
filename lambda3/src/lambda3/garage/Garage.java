@@ -6,14 +6,23 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import com.google.inject.Inject;
+
+import lambda3.cfg.ICfgManager;
 import lambda3.vehicles.Asset;
 import lambda3.vehicles.Vehicle;
 
-public class Garage {
+public class Garage 
+{
 	
-	public void init(Set<Vehicle> vehicles)
+	@Inject
+	ICfgManager config;
+	
+	public void init(String path)
 	{
-		Predicate<Vehicle> twoWheels = v -> v.getNbWheels() == 2;
+	    Set<Vehicle> vehicles = config.loadCfg(path);
+	    
+	    Predicate<Vehicle> twoWheels = v -> v.getNbWheels() == 2;
 		Predicate<Vehicle> threeWheels = v -> v.getNbWheels() == 3;
 		Predicate<Vehicle> fourWheels = v -> v.getNbWheels() == 4;
 		
