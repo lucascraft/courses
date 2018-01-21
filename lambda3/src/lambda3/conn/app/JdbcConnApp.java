@@ -6,12 +6,12 @@ import com.google.inject.name.Named;
 import lambda3.conn.IConnectionConnector;
 
 
-public class JdbcConnApp {
+public final class JdbcConnApp extends AbstractConApp {
 	@Inject @Named("Jdbc")
 	public IConnectionConnector connection;
-	public void init() {
-		connection.connect("");
 
-		System.out.println(connection.getClass().getName());
+	@Override
+	public IConnectionConnector getConnector() {
+		return connection;
 	}
 }

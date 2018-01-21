@@ -6,14 +6,12 @@ import com.google.inject.name.Named;
 import lambda3.conn.IConnectionConnector;
 
 
-public class HiveConnApp {
+public final class HiveConnApp extends AbstractConApp {
 	@Inject @Named("Hive")
 	public IConnectionConnector connection;
 
-	
-	public void init() {
-		connection.connect("");
-		
-		System.out.println(connection.getClass().getName());
+	@Override
+	public IConnectionConnector getConnector() {
+		return connection;
 	}
 }

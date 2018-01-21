@@ -1,0 +1,7 @@
+{	"connections" : 
+	[
+		{"type" : "SAPConnApp", "url" : "sap://serever1:3455"}, 
+		{"type" : "JdbcConnApp", "url" : "jdbc://serever1:3455"}, 
+		{"type" : "HiveConnApp", "url" : "hive://serever1:3455"}
+	]
+}

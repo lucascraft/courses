@@ -6,12 +6,11 @@ import com.google.inject.name.Named;
 import lambda3.conn.IConnectionConnector;
 
 
-public class SAPConnApp {
+public final class SAPConnApp extends AbstractConApp {
 	public @Inject @Named("SAP") IConnectionConnector connection;
-	
-	public void init() {
-		connection.connect("");
 
-		System.out.println(connection.getClass().getName());
+	@Override
+	public IConnectionConnector getConnector() {
+		return connection;
 	}
 }

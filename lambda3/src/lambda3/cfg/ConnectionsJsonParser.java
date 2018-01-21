@@ -1,5 +1,5 @@
 
-package lambda3.garage;
+package lambda3.cfg;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,22 +14,20 @@ import org.json.JSONObject;
 
 import com.google.common.collect.Sets;
 
-import lambda3.vehicles.Vehicle;
+import lambda3.conn.ConnectionSetting;
 
-public class GarageJsonParser {
+public class ConnectionsJsonParser {
 	
 	@SuppressWarnings("unchecked")
-	public Set<Vehicle> parse(String path)
+	public Set<ConnectionSetting> parse(String path)
 	{
 		try {
 			String jsonText = new String(Files.readAllBytes(Paths.get(path)));
 			JSONObject json = new JSONObject(jsonText);
 			Function<Object, Map<String, String>> o2hMap = o2m -> new HashMap<String, String>((Map<String, String>)o2m);
-			return json.getJSONArray("vehicles").toList().stream().map(o2hMap).map( o  -> new Vehicle(
-					o.get("brand"), 
-					o.get("kind"), 
-					o.get("mk"), 
-					o.get("wheels")
+			return json.getJSONArray("connections").toList().stream().map(o2hMap).map( o  -> new ConnectionSetting(
+					o.get("type"), 
+					o.get("url") 
 			)).collect(Collectors.toSet());
 		} catch (IOException e) {
 			e.printStackTrace();
