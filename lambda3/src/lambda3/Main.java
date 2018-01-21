@@ -14,14 +14,21 @@ public class Main
 	public static void main(String[] args) 
 	{
 		Injector injector = Guice.createInjector(new ConfigurationModule());
-	    ICfgManager comms = injector.getInstance(ICfgManager.class);
+	    ICfgManager config = injector.getInstance(ICfgManager.class);
+
+	    new Garage().init(config.loadCfg("in/vehicles.json"));
 	    
-	    new Garage().init(comms.loadCfg("in/vehicles.json"));
+	    SAPConnApp sap = new SAPConnApp();
+	    JdbcConnApp jdbc = new JdbcConnApp();
+	    HiveConnApp hive = new HiveConnApp();
 	    
-	    injector.injectMembers(new SAPConnApp());
-	    injector.injectMembers(new JdbcConnApp());
-	    injector.injectMembers(new HiveConnApp());
+	    injector.injectMembers(sap);
+	    injector.injectMembers(jdbc);
+	    injector.injectMembers(hive);
 	    
+	    sap.init();
+	    jdbc.init();
+	    hive.init();
 	}
 	
 }

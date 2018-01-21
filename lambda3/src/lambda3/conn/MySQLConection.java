@@ -1,15 +1,25 @@
 package lambda3.conn;
 
-public class MySQLConection implements IConnectionConector {
+public class MySQLConection implements IConnectionConnector {
 
 	@Override
-	public boolean connect() {
+	public boolean connect(String url) {
 		return false;
 	}
 
 	@Override
 	public boolean close() {
 		return false;
+	}
+
+	@Override
+	public byte[] read() {
+		return null;
+	}
+
+	@Override
+	public void write(byte[] bytes) {
+		
 	}
 
 }

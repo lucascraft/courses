@@ -1,10 +1,11 @@
 
 package lambda3.drivers;
 
-public class DriverCard 
+public class DrivingLicense 
 {
 	private String id;
-	private DriverCard driver;
+	private DrivingLicense driver;
+	
 
 	public String getId() {
 		return id;
@@ -14,11 +15,11 @@ public class DriverCard
 		this.id = id;
 	}
 
-	public DriverCard getDriver() {
+	public DrivingLicense getDriver() {
 		return driver;
 	}
 
-	public void setDriver(DriverCard driver) {
+	public void setDriver(DrivingLicense driver) {
 		this.driver = driver;
 	}
 	

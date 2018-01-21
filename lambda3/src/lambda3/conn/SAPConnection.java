@@ -1,17 +1,25 @@
 package lambda3.conn;
 
-public class SAPConnection implements IConnectionConector {
+public class SAPConnection implements IConnectionConnector {
 
 	@Override
-	public boolean connect() {
-		// TODO Auto-generated method stub
+	public boolean connect(String url) {
 		return false;
 	}
 
 	@Override
 	public boolean close() {
-		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public byte[] read() {
+		return null;
+	}
+
+	@Override
+	public void write(byte[] bytes) {
+		
 	}
 
 }
