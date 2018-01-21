@@ -7,8 +7,7 @@ import lambda3.conn.IConnectionConnector;
 
 
 public final class JdbcConnApp extends AbstractConApp {
-	@Inject @Named("Jdbc")
-	public IConnectionConnector connection;
+	public @Inject @Named("Jdbc") IConnectionConnector connection;
 
 	@Override
 	public IConnectionConnector getConnector() {

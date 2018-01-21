@@ -22,5 +22,6 @@ public class Main
 	    ((ConnectionPool)pool).getConnectionsMap().values().forEach(c -> {
 	    	System.out.println(c.getConnector().getURL());
 	    });
+	    
 	}
 }

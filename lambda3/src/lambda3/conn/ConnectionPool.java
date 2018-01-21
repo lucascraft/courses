@@ -11,7 +11,8 @@ import lambda3.ConfigurationModule;
 import lambda3.cfg.IConnectionManager;
 import lambda3.conn.app.AbstractConApp;
 
-public class ConnectionPool implements IConnectionPool {
+public class ConnectionPool implements IConnectionPool 
+{
 
 	@Inject
 	IConnectionManager config;
@@ -29,8 +30,8 @@ public class ConnectionPool implements IConnectionPool {
 	{
 		Injector injector = Guice.createInjector(new ConfigurationModule());
 	    config.loadCfg(path).forEach(c -> {
-	    	Class<?> connectionAp = appMapper.getConnectionApByName(c.getType());
-			connectionsMap.put(c, (AbstractConApp) injector.getInstance(connectionAp));
+	    	Class<?> connectionApp = appMapper.getConnectionApByName(c.getType());
+			connectionsMap.put(c, (AbstractConApp) injector.getInstance(connectionApp));
 			AbstractConApp conn = connectionsMap.get(c);
 			if (conn instanceof AbstractConApp)
 			{

@@ -7,8 +7,7 @@ import lambda3.conn.IConnectionConnector;
 
 
 public final class HiveConnApp extends AbstractConApp {
-	@Inject @Named("Hive")
-	public IConnectionConnector connection;
+	public @Inject @Named("Hive") IConnectionConnector connection;
 
 	@Override
 	public IConnectionConnector getConnector() {
