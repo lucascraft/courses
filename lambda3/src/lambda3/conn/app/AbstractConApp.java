@@ -4,11 +4,11 @@ import lambda3.conn.IConnectionConnector;
 
 public abstract class AbstractConApp 
 {
-	abstract public IConnectionConnector getConnector(); 
+	abstract public IConnectionConnector getConnector();
+	
 	public void init() 
 	{
 		IConnectionConnector connector = getConnector();
-		connector.connect("");
-		System.out.println(connector.getClass().getName());
+		connector.connect(connector.getURL());
 	}
 }
