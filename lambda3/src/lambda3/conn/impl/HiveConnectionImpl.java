@@ -1,6 +1,8 @@
-package lambda3.conn;
+package lambda3.conn.impl;
 
-public class MySQLConection implements IConnectionConnector {
+import lambda3.conn.IConnectionConnector;
+
+public class HiveConnectionImpl implements IConnectionConnector {
 
 	@Override
 	public boolean connect(String url) {
@@ -21,5 +23,5 @@ public class MySQLConection implements IConnectionConnector {
 	public void write(byte[] bytes) {
 		
 	}
-
+	
 }

@@ -1,6 +1,8 @@
-package lambda3.conn;
+package lambda3.conn.impl;
 
-public class SAPConnection implements IConnectionConnector {
+import lambda3.conn.IConnectionConnector;
+
+public class SAPConnectionImpl implements IConnectionConnector {
 
 	@Override
 	public boolean connect(String url) {

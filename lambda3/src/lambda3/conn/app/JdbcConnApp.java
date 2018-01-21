@@ -1,4 +1,4 @@
-package lambda3.conn.impl;
+package lambda3.conn.app;
 
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
