@@ -1,4 +1,4 @@
-package lambda3.conn;
+package lambda3.conn.settings;
 
 import lambda3.conn.app.AbstractConnApp;
 

@@ -1,5 +1,5 @@
 
-package lambda3.cfg;
+package lambda3.cfg.parsers;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +14,7 @@ import org.json.JSONObject;
 
 import com.google.common.collect.Sets;
 
-import lambda3.conn.ConnectionSetting;
+import lambda3.conn.settings.ConnectionSetting;
 
 public class ConnectionsJsonParser 
 {

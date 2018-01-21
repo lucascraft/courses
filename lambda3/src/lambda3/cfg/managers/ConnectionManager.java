@@ -1,10 +1,12 @@
-package lambda3.cfg;
+package lambda3.cfg.managers;
 
 import java.util.Set;
 
 import javax.inject.Singleton;
 
-import lambda3.conn.ConnectionSetting;
+import lambda3.cfg.IConfigLoader;
+import lambda3.cfg.parsers.ConnectionsJsonParser;
+import lambda3.conn.settings.ConnectionSetting;
 
 @Singleton
 public class ConnectionManager implements IConfigLoader<ConnectionSetting>

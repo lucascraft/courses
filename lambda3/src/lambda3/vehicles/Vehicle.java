@@ -10,43 +10,53 @@ public class Vehicle
 	private String kind;
 	private String mk;
 	
-	public int getNbWheels() {
+	public int getNbWheels() 
+	{
 		return nbWheels;
 	}
 	
-	public void setNbWheels(int nbWheels) {
+	public void setNbWheels(int nbWheels) 
+	{
 		this.nbWheels = nbWheels;
 	}
 	
-	public int getNbSeats() {
+	public int getNbSeats() 
+	{
 		return nbSeats;
 	}
 	
-	public void setNbSeats(int nbSeats) {
+	public void setNbSeats(int nbSeats) 
+	{
 		this.nbSeats = nbSeats;
 	}
 	
-	public Brand getBrand() {
+	public Brand getBrand() 
+	{
 		return brand;
 	}
 	
-	public void setBrand(Brand brand) {
+	public void setBrand(Brand brand) 
+	{
 		this.brand = brand;
 	}
 	
-	public String getKind() {
+	public String getKind() 
+	{
 		return kind;
 	}
 	
-	public void setKind(String kind) {
+	public void setKind(String kind) 
+	{
 		this.kind = kind;
 	}
 	
-	public String getMk() {
+	public String getMk() 
+	{
 		return mk;
 	}
 	
-	public void setMk(String mk) {
+	public void setMk(String mk) 
+	{
 		this.mk = mk;
 	}
 	
@@ -59,7 +69,8 @@ public class Vehicle
 	}
 	
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "[" + brand.name() + "][" + kind + "][" + mk + "][" + nbWheels + " wheels]";
 	}
 }

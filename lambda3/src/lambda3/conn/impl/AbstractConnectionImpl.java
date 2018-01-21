@@ -1,6 +1,6 @@
 package lambda3.conn.impl;
 
-import lambda3.conn.IConnectionConnector;
+import lambda3.conn.settings.IConnectionConnector;
 
 public abstract class AbstractConnectionImpl implements IConnectionConnector
 {

@@ -3,23 +3,28 @@ package lambda3.vehicles;
 import java.util.UUID;
 
 
-public class Asset {
+public class Asset 
+{
 	private String id;
 	private float price;
 	
-	public String getId() {
+	public String getId() 
+	{
 		return id;
 	}
 	
-	public void setId(String id) {
+	public void setId(String id) 
+	{
 		this.id = id;
 	}
 	
-	public float getPrice() {
+	public float getPrice() 
+	{
 		return price;
 	}
 	
-	public void setPrice(float price) {
+	public void setPrice(float price) 
+	{
 		this.price = price;
 	}
 	
@@ -30,7 +35,8 @@ public class Asset {
 	}
 	
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "[" + id + "]";
 	}
 	

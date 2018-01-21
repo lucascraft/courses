@@ -1,6 +1,6 @@
 package lambda3.conn.app;
 
-import lambda3.conn.IConnectionConnector;
+import lambda3.conn.settings.IConnectionConnector;
 
 /**
  * Basic infrastructure for connected applications

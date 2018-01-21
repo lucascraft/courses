@@ -1,5 +1,5 @@
 
-package lambda3.cfg;
+package lambda3.cfg.parsers;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -3,7 +3,7 @@ package lambda3;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import lambda3.conn.ConnectionPool;
+import lambda3.conn.settings.ConnectionPool;
 import lambda3.garage.Garage;
 
 public class BDApplication 

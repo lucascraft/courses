@@ -3,7 +3,7 @@ package lambda3.conn.app;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
-import lambda3.conn.IConnectionConnector;
+import lambda3.conn.settings.IConnectionConnector;
 
 
 public final class JdbcConnApp extends AbstractConnApp 
