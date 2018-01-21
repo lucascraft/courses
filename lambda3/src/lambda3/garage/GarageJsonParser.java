@@ -1,4 +1,4 @@
-package lambda3;
+package lambda3.garage;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 import org.json.JSONObject;
 
 import com.google.common.collect.Sets;
+
+import lambda3.vehicles.Vehicle;
 
 public class GarageJsonParser {
 	

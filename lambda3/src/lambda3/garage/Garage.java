@@ -1,25 +1,17 @@
-package lambda3;
+package lambda3.garage;
 
 import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-
-import com.google.common.collect.Sets;
-import com.google.inject.Guice;
-import com.google.inject.Inject;
-import com.google.inject.Injector;
+import lambda3.vehicles.AcountableAsset;
+import lambda3.vehicles.Vehicle;
 
 public class Garage {
 	
-	public void doIt()
+	public void init(Set<Vehicle> vehicles)
 	{
-		Injector injector = Guice.createInjector(new BasicModule());
-	    ICfgManager comms = injector.getInstance(ICfgManager.class);		
-	    
-		Set<Vehicle> vehicles = Sets.newHashSet();
-
 		Predicate<Vehicle> twoWheels = v -> v.getNbWheels() == 2;
 		Predicate<Vehicle> fourWheels = v -> v.getNbWheels() == 2;
 		
@@ -30,14 +22,7 @@ public class Garage {
 		
 		Set<AcountableAsset> assets = vehicles.stream().map(v2aFunc).collect(Collectors.toSet());
 		
-		assets.forEach(AcountableAsset::toString);
-		
-		Set<Vehicle> allVehicles = comms.loadCfg("in/vehicles.json");
-		
-		for (Vehicle v : allVehicles)
-		{
-			System.out.println(v.toString());
-		}
-
+		assets.forEach(s -> System.out.println(s.toString() ) );
+		vehicles.forEach(v -> System.out.println(v.toString() ) );
 	}
 }

@@ -1,4 +1,4 @@
-package lambda3;
+package lambda3.vehicles;
 
 public class Vehicle 
 {

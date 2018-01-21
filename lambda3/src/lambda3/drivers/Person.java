@@ -1,4 +1,4 @@
-package lambda3;
+package lambda3.drivers;
 
 public class Person 
 {
