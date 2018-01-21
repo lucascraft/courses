@@ -4,6 +4,7 @@
 		{"brand" : "Toyota", "kind" : "Laser", "mk" : "GT", "wheels" : 4},
 		{"brand" : "Yamaha", "kind" : "Z1", "mk" : "Deluxe", "wheels" : 2},
 		{"brand" : "Honda", "kind" : "CBR", "mk" : "2017", "wheels" : 2},
+		{"brand" : "Fiat", "kind" : "500x", "mk" : "2017", "wheels" : 4},
 		{"brand" : "Ford", "kind" : "Army Truck", "mk" : "1943", "wheels" : 6},
 		{"brand" : "Piaggio", "kind" : "zephyr", "mk" : "MX", "wheels" : 3}
 	]

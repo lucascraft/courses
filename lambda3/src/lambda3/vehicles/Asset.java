@@ -3,7 +3,7 @@ package lambda3.vehicles;
 import java.util.UUID;
 
 
-public class AcountableAsset {
+public class Asset {
 	private String id;
 	private float price;
 	
@@ -23,15 +23,15 @@ public class AcountableAsset {
 		this.price = price;
 	}
 	
-	public AcountableAsset(Vehicle v)
+	public Asset(Vehicle v)
 	{
 		price = (v.getBrand().equals(Brand.Fiat) ? 10 : 50);
-		id = v.getBrand() + "__" + UUID.randomUUID().toString();
+		id = v.getBrand() + "_" + v.getKind()+ "_" + v.getMk() + "___" + UUID.randomUUID().toString();
 	}
 	
 	@Override
 	public String toString() {
-		return "[" + id + "][" + price + "]";
+		return "[" + id + "]";
 	}
 	
 }
