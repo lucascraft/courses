@@ -8,15 +8,15 @@ import lambda3.garage.Garage;
 
 public class BDApplication 
 {
-	public static void run()
+	public static void run(String vehiclesCfg, String connCfg)
 	{
 		Injector injector = Guice.createInjector(new ConfigurationModule());
 
 		Garage garage = injector.getInstance(Garage.class);
-	    garage.init("in/vehicles.json");
+	    garage.init(vehiclesCfg);
 	   
 	    ConnectionPool pool = injector.getInstance(ConnectionPool.class);
-	    pool.init("in/connections.json");
+	    pool.init(connCfg);
 
 	    pool.getConnectionsMap().values().forEach(c -> {
 	    	System.out.println(c.getConnector().getURL());
