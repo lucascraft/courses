@@ -5,12 +5,19 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+
 import com.google.common.collect.Sets;
+import com.google.inject.Guice;
+import com.google.inject.Inject;
+import com.google.inject.Injector;
 
 public class Garage {
 	
-	public static void main(String[] args) 
+	public void doIt()
 	{
+		Injector injector = Guice.createInjector(new BasicModule());
+	    ICfgManager comms = injector.getInstance(ICfgManager.class);		
+	    
 		Set<Vehicle> vehicles = Sets.newHashSet();
 
 		Predicate<Vehicle> twoWheels = v -> v.getNbWheels() == 2;
@@ -25,11 +32,12 @@ public class Garage {
 		
 		assets.forEach(AcountableAsset::toString);
 		
-		Set<Vehicle> allVehicles = new GarageJsonParser().parse("in/vehicles.json");
+		Set<Vehicle> allVehicles = comms.loadCfg("in/vehicles.json");
 		
 		for (Vehicle v : allVehicles)
 		{
 			System.out.println(v.toString());
 		}
+
 	}
 }
