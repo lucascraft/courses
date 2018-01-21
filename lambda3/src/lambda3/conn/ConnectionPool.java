@@ -35,6 +35,7 @@ public class ConnectionPool implements IConnectionPool {
 			if (conn instanceof AbstractConApp)
 			{
 				((AbstractConApp)conn).init();
+				((AbstractConApp)conn).getConnector().setURL(c.getUrl());
 			}
 		});
 	}
