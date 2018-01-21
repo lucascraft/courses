@@ -7,8 +7,14 @@ import lambda3.conn.app.HiveConnApp;
 import lambda3.conn.app.JdbcConnApp;
 import lambda3.conn.app.SAPConnApp;
 
+/**
+ * Connection mapper
+ * 
+ * @author LBI
+ */
 public class ConnectionAppMapper implements IConnectionAppMapper 
 {
+	/** Connection apps map */
 	private Map<String, Class<?>> appsMap;
 	
 	public ConnectionAppMapper() 

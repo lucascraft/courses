@@ -2,7 +2,10 @@ package lambda3.conn.impl;
 
 import lambda3.conn.IConnectionConnector;
 
-public abstract class AbstractConnectionImpl implements IConnectionConnector{
+public abstract class AbstractConnectionImpl implements IConnectionConnector
+{
+	
+	/** url */
 	protected String url;
 	
 	@Override

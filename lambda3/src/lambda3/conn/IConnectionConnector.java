@@ -1,5 +1,10 @@
 package lambda3.conn;
 
+/**
+ * Defines connection lifecycle
+ * 
+ * @author LBI
+ */
 public interface IConnectionConnector 
 {
 	void setURL(String url);

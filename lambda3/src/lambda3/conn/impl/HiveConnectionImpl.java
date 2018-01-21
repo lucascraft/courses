@@ -1,5 +1,11 @@
 package lambda3.conn.impl;
 
-public class HiveConnectionImpl extends AbstractConnectionImpl {
+/**
+ * Hive Connection
+ * 
+ * @author LBI
+ */
+public class HiveConnectionImpl extends AbstractConnectionImpl 
+{
 	
 }

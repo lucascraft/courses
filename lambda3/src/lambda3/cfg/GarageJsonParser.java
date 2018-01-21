@@ -1,5 +1,5 @@
 
-package lambda3.garage;
+package lambda3.cfg;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,8 +16,8 @@ import com.google.common.collect.Sets;
 
 import lambda3.vehicles.Vehicle;
 
-public class GarageJsonParser {
-	
+public class GarageJsonParser 
+{
 	@SuppressWarnings("unchecked")
 	public Set<Vehicle> parse(String path)
 	{

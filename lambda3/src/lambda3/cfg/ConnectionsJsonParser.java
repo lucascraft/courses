@@ -16,8 +16,8 @@ import com.google.common.collect.Sets;
 
 import lambda3.conn.ConnectionSetting;
 
-public class ConnectionsJsonParser {
-	
+public class ConnectionsJsonParser 
+{
 	@SuppressWarnings("unchecked")
 	public Set<ConnectionSetting> parse(String path)
 	{

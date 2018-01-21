@@ -1,5 +1,11 @@
 package lambda3.conn.impl;
 
-public class SAPConnectionImpl  extends AbstractConnectionImpl {
+/**
+ * SAP Connection
+ * 
+ * @author LBI
+ */
+public class SAPConnectionImpl  extends AbstractConnectionImpl 
+{
 
 }

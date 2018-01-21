@@ -1,8 +1,18 @@
 package lambda3.conn;
 
+/**
+ * Connection setting POJO
+ * 
+ * type : {Hive, Jdbc, SAP, ...}
+ * 
+ * @author LBI
+ */
 public class ConnectionSetting implements Comparable<ConnectionSetting> 
 {
+	/** type */
 	private String type;
+	
+	/** url */
 	private String url;
 	
 	public ConnectionSetting(String type, String url)

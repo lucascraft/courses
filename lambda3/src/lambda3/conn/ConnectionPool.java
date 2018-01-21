@@ -6,40 +6,49 @@ import java.util.TreeMap;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
+import com.google.inject.name.Named;
 
 import lambda3.ConfigurationModule;
-import lambda3.cfg.IConnectionManager;
-import lambda3.conn.app.AbstractConApp;
+import lambda3.cfg.IConfigLoader;
+import lambda3.conn.app.AbstractConnApp;
 
+/**
+ * Connection impl
+ * 
+ * @author LBI
+ *
+ */
 public class ConnectionPool implements IConnectionPool 
 {
 
-	@Inject
-	IConnectionManager config;
+	@SuppressWarnings("rawtypes")
+	public @Inject @Named("Connection") IConfigLoader config;
 	
 	@Inject
 	IConnectionAppMapper appMapper;
 	
-	Map<ConnectionSetting, AbstractConApp> connectionsMap;
+	Map<ConnectionSetting, AbstractConnApp> connectionsMap;
 	
-	public ConnectionPool() {
-		connectionsMap = new TreeMap<ConnectionSetting, AbstractConApp>();
+	ConnectionPool() {
+		connectionsMap = new TreeMap<ConnectionSetting, AbstractConnApp>();
 	}
 	
+	@SuppressWarnings("unchecked")
+	@Override
 	public void init (String path)
 	{
 		Injector injector = Guice.createInjector(new ConfigurationModule());
-	    config.loadCfg(path).forEach(c -> {
+	    ((IConfigLoader<ConnectionSetting>)config).loadConfig(path).forEach(c -> {
 	    	Class<?> connectionApp = appMapper.getConnectionApByName(c.getType());
-			connectionsMap.put(c, (AbstractConApp) injector.getInstance(connectionApp));
-			AbstractConApp conn = connectionsMap.get(c);
+			connectionsMap.put(c, (AbstractConnApp) injector.getInstance(connectionApp));
+			AbstractConnApp conn = connectionsMap.get(c);
 			conn.init();
 			conn.getConnector().setURL(c.getUrl());
 		});
 	}
 
 	@Override
-	public Map<ConnectionSetting, AbstractConApp> getConnectionsMap() {
+	public Map<ConnectionSetting, AbstractConnApp> getConnectionsMap() {
 		return connectionsMap;
 	}
 }

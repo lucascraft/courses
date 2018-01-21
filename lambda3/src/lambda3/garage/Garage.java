@@ -7,20 +7,22 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
-import lambda3.cfg.ICfgManager;
+import lambda3.cfg.IConfigLoader;
 import lambda3.vehicles.Asset;
 import lambda3.vehicles.Vehicle;
 
 public class Garage 
 {
 	
-	@Inject
-	ICfgManager config;
+	@SuppressWarnings("rawtypes")
+	public @Inject @Named("Config") IConfigLoader config;
 	
 	public void init(String path)
 	{
-	    Set<Vehicle> vehicles = config.loadCfg(path);
+	    @SuppressWarnings("unchecked")
+		Set<Vehicle> vehicles = ((IConfigLoader<Vehicle>)config).loadConfig(path);
 	    
 	    Predicate<Vehicle> twoWheels = v -> v.getNbWheels() == 2;
 		Predicate<Vehicle> threeWheels = v -> v.getNbWheels() == 3;

@@ -6,7 +6,8 @@ import com.google.inject.name.Named;
 import lambda3.conn.IConnectionConnector;
 
 
-public final class SAPConnApp extends AbstractConApp {
+public final class SAPConnApp extends AbstractConnApp 
+{
 	public @Inject @Named("SAP") IConnectionConnector connection;
 
 	@Override

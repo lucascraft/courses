@@ -1,6 +1,11 @@
 package lambda3.conn.impl;
 
-public class MySQLConectionImpl  extends AbstractConnectionImpl {
-
+/**
+ * MySQL Connection
+ * 
+ * @author LBI
+ */
+public class MySQLConectionImpl  extends AbstractConnectionImpl 
+{
 
 }

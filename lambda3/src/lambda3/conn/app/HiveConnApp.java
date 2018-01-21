@@ -6,7 +6,8 @@ import com.google.inject.name.Named;
 import lambda3.conn.IConnectionConnector;
 
 
-public final class HiveConnApp extends AbstractConApp {
+public final class HiveConnApp extends AbstractConnApp 
+{
 	public @Inject @Named("Hive") IConnectionConnector connection;
 
 	@Override
