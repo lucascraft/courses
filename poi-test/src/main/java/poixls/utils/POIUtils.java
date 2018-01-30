@@ -5,22 +5,17 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.nio.file.attribute.FileAttribute;
 import java.util.Iterator;
 
-import org.apache.poi.sl.draw.geom.Path;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 public class POIUtils 
@@ -31,8 +26,8 @@ public class POIUtils
 
         try 
         {
-        	  XSSFWorkbook workbook = new XSSFWorkbook();
-              XSSFSheet sheet = workbook.createSheet("Datatypes in Java");
+        	HSSFWorkbook workbook = new HSSFWorkbook();
+              HSSFSheet sheet = workbook.createSheet();
               Object[][] datatypes = {
                       {"workflow", "dest table", "source table", "formatted table"},
                       {"int", "Primitive", 2},
@@ -82,7 +77,7 @@ public class POIUtils
     	   
     	   FileInputStream excelFile = new FileInputStream(path.toFile());
 	        
-            Workbook workbook = new XSSFWorkbook(excelFile);
+            Workbook workbook = new HSSFWorkbook(excelFile);
             Sheet datatypeSheet = workbook.getSheetAt(0);
             Iterator<Row> iterator = datatypeSheet.iterator();
 
