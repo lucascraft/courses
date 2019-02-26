@@ -25,7 +25,6 @@ class VUtilTest(unittest.TestCase):
     #
     
     def tearDown(self):
-        del self.colors
         pass
 
     #

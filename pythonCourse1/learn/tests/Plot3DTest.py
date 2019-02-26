@@ -5,6 +5,9 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 from learn.it.XMLUtils import XMLUtils
 from learn.it.VUtils import VUtils
+from matplotlib.pyplot import hsv
+import numpy as np
+from cv2 import cv2
 
 #
 # Test utils
@@ -67,7 +70,7 @@ class Plot3DTest(unittest.TestCase):
         ax.set_ylabel('Y Label')
         ax.set_zlabel('Z Label')
         
-        plt.show()
+        #plt.show()
         
         
 if __name__ == "__main__":
