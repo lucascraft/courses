@@ -25,7 +25,7 @@ class VUtilTest(unittest.TestCase):
     #
     
     def tearDown(self):
-        del self.color
+        del self.colors
         pass
 
     #
@@ -55,6 +55,17 @@ class VUtilTest(unittest.TestCase):
         else:
             pass
 
+    #
+    # test color registry initialization from XML
+    #
+    def testInitColorRegistryFromXML(self):
+        xmlColors = ["#123FFF", "#AA34DD", "#33DDFF", "#AAEEDE", "#FF0013", "#000023", "#EF47EA", "#FF2354", "#7899FF", "#00E3DE", "#9912E4", "#EF54FE", "#FF001D"]
+        xmlRoot= VUtils.initColorsFromXML("C:/Users/lucas/git/courses/pythonCourse1/learn/tests/vproject.xml")
+        for c in xmlRoot:
+            colorTag = str(c.attrib.get("webTag"))
+            if not xmlColors.index(colorTag) >= 0:
+                fail("Color registry initialization from XML definition failed")
+        pass
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']

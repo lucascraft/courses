@@ -1,4 +1,5 @@
 from builtins import classmethod
+from learn.it.XMLUtils import XMLUtils
  
 #
 # Visual utils
@@ -77,3 +78,14 @@ class VUtils(object):
     def getColorsRegistry(self):
         return self.colorRegistry
             
+    @classmethod
+    #
+    # init colors registry from XML
+    #
+    def initColorsFromXML(self, filename):
+        xmlColorsRoot = XMLUtils().loadXML(filename)
+        for child in xmlColorsRoot:
+            colorTag = str(child.attrib.get("webTag"))
+            if not colorTag is None and colorTag.startswith("#"):
+                self.register_Color(colorTag);
+        return xmlColorsRoot
