@@ -12,6 +12,7 @@ vutils = VUtils()
 
 color = vutils.get_Color("#FF001D")
 
-
+for k, v in vutils.getColorsRegistry().items():
+    print(k, v)
 
 
