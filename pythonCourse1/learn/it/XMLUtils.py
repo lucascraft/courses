@@ -8,6 +8,7 @@ class XMLUtils(object):
     def __init__(self):
         return
         
+    @classmethod
     #
     # load XML
     #
