@@ -31,7 +31,7 @@ class Colors(models.Model):
     webTag      = models.CharField(max_length=100, null=True)
     l_red       = models.FloatField()
     l_green     = models.FloatField()
-    l_blue       = models.FloatField()
+    l_blue      = models.FloatField()
     date_add    = models.DateField()
     date_remove = models.DateField()
     

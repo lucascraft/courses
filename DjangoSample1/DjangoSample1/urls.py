@@ -25,6 +25,5 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('polls/', include('polls.urls')),
     path('wms2map/', include('wms2map.urls')),
-#    path('restWMS/', include('restWMS.urls')),
     path('admin/', admin.site.urls),
 ]
