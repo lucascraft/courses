@@ -23,3 +23,18 @@ class Product(models.Model):
     def __unicode__(self):
         return "{0}".format(self.code, )
 
+
+class Colors(models.Model):
+
+    id          = models.CharField(db_column="id",max_length=100, primary_key=True)
+    name        = models.CharField(max_length=255)
+    webTag      = models.CharField(max_length=100, null=True)
+    l_red       = models.FloatField()
+    l_green     = models.FloatField()
+    l_blue       = models.FloatField()
+    date_add    = models.DateField()
+    date_remove = models.DateField()
+    
+    def __unicode__(self):
+        return "{0}".format(self.code, )
+

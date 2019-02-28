@@ -1,7 +1,7 @@
 from django.contrib.admin import AdminSite
 from django.conf.urls import url
 from DjangoSample1.views import UserViewSet, GroupViewSet
-from restWMS.views import ProductViewSet
+from restWMS.views import ProductViewSet, ColorsViewSet
 
 """from django.contrib import admin
 """
@@ -17,7 +17,8 @@ from rest_framework import routers, serializers, viewsets
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
-router.register(r'wmsMaps', ProductViewSet)
+router.register(r'products', ProductViewSet)
+router.register(r'colors', ColorsViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
