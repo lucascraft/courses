@@ -13,10 +13,13 @@ class ServerManager():
 
 class Product(models.Model):
 
-    name     = models.CharField(max_length=255)
-    code     = models.CharField(max_length=100, null=True)
-    price    = models.FloatField()
-
+    id          = models.CharField(db_column="id",max_length=100, primary_key=True)
+    name        = models.CharField(max_length=255)
+    code        = models.CharField(max_length=100, null=True)
+    price       = models.FloatField()
+    date_add    = models.DateField()
+    date_remove = models.DateField()
+    
     def __unicode__(self):
         return "{0}".format(self.code, )
 
