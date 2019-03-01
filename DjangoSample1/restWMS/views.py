@@ -9,7 +9,6 @@ class ProductViewSet(ReadOnlyModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
-
 class ColorsViewSet(ReadOnlyModelViewSet):
     queryset = Colors.objects.all()
     serializer_class = ColorsSerializer

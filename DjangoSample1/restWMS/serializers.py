@@ -11,10 +11,10 @@ class ColorsSerializer(serializers.HyperlinkedModelSerializer):
         model = Colors
         fields = ('date_add', 'name', 'webTag', 'l_red', 'l_green', 'l_blue')
 
-class ProjectSetupSerializer(serializers.HyperlinkedModelSerializer):
+class ProjectSetupSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProjectSetup
-        fields = ('name', 'fixtures_id')
+        fields = ('name', 'fixture')
 
 class FixtureSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

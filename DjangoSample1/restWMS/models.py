@@ -48,11 +48,11 @@ class Fixture(models.Model):
     l_y         = models.IntegerField()
     mode        = models.CharField(max_length=255)
     direction   = models.IntegerField()
-    date_add    = models.DateField()
+    date_add    = models.DateField() 
     date_remove = models.DateField()
     
 class ProjectSetup(models.Model):
     
     id          = models.CharField(db_column="id",max_length=100, primary_key=True)
     name        = models.CharField(max_length=255)
-    fixtures    = models.ForeignKey(Fixture, on_delete=CASCADE)
+    fixture     = models.ForeignKey(Fixture, db_column='fixture', on_delete=CASCADE)
