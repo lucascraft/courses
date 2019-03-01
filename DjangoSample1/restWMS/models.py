@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
 
 # Create your models here.
 
@@ -37,4 +38,21 @@ class Colors(models.Model):
     
     def __unicode__(self):
         return "{0}".format(self.code, )
-
+    
+    
+class Fixture(models.Model):
+    
+    id          = models.CharField(db_column="id",max_length=100, primary_key=True)
+    name        = models.CharField(max_length=255)
+    l_x         = models.IntegerField()
+    l_y         = models.IntegerField()
+    mode        = models.CharField(max_length=255)
+    direction   = models.IntegerField()
+    date_add    = models.DateField()
+    date_remove = models.DateField()
+    
+class ProjectSetup(models.Model):
+    
+    id          = models.CharField(db_column="id",max_length=100, primary_key=True)
+    name        = models.CharField(max_length=255)
+    fixtures    = models.ForeignKey(Fixture, on_delete=CASCADE)

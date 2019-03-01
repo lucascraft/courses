@@ -1,7 +1,8 @@
 from django.contrib.admin import AdminSite
 from django.conf.urls import url
 from DjangoSample1.views import UserViewSet, GroupViewSet
-from restWMS.views import ProductViewSet, ColorsViewSet
+from restWMS.views import ProductViewSet, ColorsViewSet, FixturesViewSet,\
+    SetupProjectsViewSet
 
 """from django.contrib import admin
 """
@@ -19,6 +20,8 @@ router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
 router.register(r'products', ProductViewSet)
 router.register(r'colors', ColorsViewSet)
+router.register(r'fixtures', FixturesViewSet)
+router.register(r'setups', SetupProjectsViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
