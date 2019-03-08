@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
+    'geoactiv',
+    'reporter'
 ]
 
 MIDDLEWARE = [
@@ -73,10 +76,25 @@ WSGI_APPLICATION = 'geoactiv.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'geoactiv',
+#         'USER': 'lucas',
+#         'PASSWORD': 'lucas',
+#         'HOST': '127.0.0.1', # Or an IP Address that your DB is hosted on
+#         'PORT': '3306'
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'geoactiv',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': '127.0.0.1', # Or an IP Address that your DB is hosted on
+        'PORT': '5432'
     }
 }
 
