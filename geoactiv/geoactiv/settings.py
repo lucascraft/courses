@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -73,21 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'geoactiv.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'geoactiv',
-#         'USER': 'lucas',
-#         'PASSWORD': 'lucas',
-#         'HOST': '127.0.0.1', # Or an IP Address that your DB is hosted on
-#         'PORT': '3306'
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
@@ -133,7 +119,17 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
-
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS =(
+    os.path.join(BASE_DIR, 'static'),
+)
+
+LEAFLET_CONFIG = {
+    'DEFAULT_ZOOM': 5,
+    'MAX_ZOOM': 20,
+    'MIN_ZOOM':3,
+    'DEFAULT_CENTER':(-0.17, 51.51),
+    'SCALE': 'both',
+    'ATTRIBUTION_PREFIX': 'geoactiv'
+}
