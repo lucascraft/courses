@@ -1,6 +1,6 @@
 import unittest
-from test.test_deque import fail
 from learn.it.VUtils import VUtils
+from keyring.backends import fail
 
 #
 # Test utils
@@ -59,7 +59,7 @@ class VUtilTest(unittest.TestCase):
     #
     def testInitColorRegistryFromXML(self):
         xmlColors = ["#123FFF", "#AA34DD", "#33DDFF", "#AAEEDE", "#FF0013", "#000023", "#EF47EA", "#FF2354", "#7899FF", "#00E3DE", "#9912E4", "#EF54FE", "#FF001D"]
-        xmlRoot= VUtils.initColorsFromXML("C:/Users/lucas/git/courses/pythonCourse1/learn/tests/vproject.xml")
+        xmlRoot= VUtils.initColorsFromXML("/home/lucas/git/courses/pythonCourse1/learn/tests/vproject.xml")
         for c in xmlRoot:
             colorTag = str(c.attrib.get("webTag"))
             if not xmlColors.index(colorTag) >= 0:

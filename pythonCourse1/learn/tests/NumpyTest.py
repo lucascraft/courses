@@ -1,6 +1,6 @@
 import numpy as np
-from test.test_deque import fail
 import unittest
+from keyring.backends import fail
 
 class NumpyTest(unittest.TestCase):
 

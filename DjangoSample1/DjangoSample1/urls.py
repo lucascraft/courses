@@ -3,10 +3,10 @@ from django.conf.urls import url
 from DjangoSample1.views import UserViewSet, GroupViewSet
 from restWMS.views import ProductViewSet, ColorsViewSet, FixturesViewSet,\
     SetupProjectsViewSet
+from django.urls.conf import path
 
 """from django.contrib import admin
 """
-from django.urls import include, path
 from django.contrib import admin
 
 from django.conf.urls import url, include
@@ -26,7 +26,6 @@ router.register(r'setups', SetupProjectsViewSet)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('polls/', include('polls.urls')),
     path('wms2map/', include('wms2map.urls')),
     path('admin/', admin.site.urls),
 ]

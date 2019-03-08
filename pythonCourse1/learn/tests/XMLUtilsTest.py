@@ -1,7 +1,7 @@
 import unittest
 
-from test.test_deque import fail
 from learn.it.XMLUtils import XMLUtils
+from keyring.backends import fail
 
 #
 # Test XML utils
@@ -32,7 +32,7 @@ class XMLUtilsTest(unittest.TestCase):
         print("Test XML parsing")
         
         try:
-            xmlRoot = XMLUtils().loadXML("C:/Users/lucas/git/courses/pythonCourse1/learn/tests/vproject.xml")
+            xmlRoot = XMLUtils().loadXML("/home/lucas/git/courses/pythonCourse1/learn/tests/vproject.xml")
             if xmlRoot is None:
                 fail("XML parsing failed")
             else:                

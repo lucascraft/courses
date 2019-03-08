@@ -1,4 +1,3 @@
-from test.test_deque import fail
 import unittest
 
 from learn.it.VUtils import VUtils
@@ -31,7 +30,7 @@ class VMainTest(unittest.TestCase):
     
     def testColorRegistryInit(self):
         print("Test colors XML load and registering")
-        VMain().initColorsFromXML("C:/Users/lucas/git/courses/pythonCourse1/learn/tests/vproject.xml")
+        VMain().initColorsFromXML("/home/lucas/git/courses/pythonCourse1/learn/tests/vproject.xml")
         pass
     
 
